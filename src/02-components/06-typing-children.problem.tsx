@@ -1,15 +1,19 @@
-import React from "react";
+import React from "react"
 
-export const Button = (props: {}) => {
-  return <button>{props.children}</button>;
-};
+interface ButtonProps {
+    children: React.ReactNode
+}
+
+export const Button = (props: { children: React.ReactNode }): React.JSX.Element => {
+    return <button>{props.children}</button>
+}
 
 const Parent = () => {
-  return (
-    <>
-      {/* @ts-expect-error */}
-      <Button></Button>
-      <Button>Hello world!</Button>
-    </>
-  );
-};
+    return (
+        <>
+            {/* @ts-expect-error */}
+            <Button></Button>
+            <Button>Hello world!</Button>
+        </>
+    )
+}

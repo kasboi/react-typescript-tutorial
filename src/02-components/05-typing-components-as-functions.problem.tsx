@@ -1,20 +1,22 @@
-import React from "react";
+import React from "react"
 
 interface Props {
-  className: string;
+    className: string
 }
 
-/* @ts-expect-error */
-export const Button = (props: Props) => {
-  return {
-    ohDear: "123",
-  };
-};
+// /* @ts-expect-error */
+export const Button = (props: Props): React.JSX.Element => {
+    return <div>Hello</div>
+}
+
+// export const Button: React.FC<Props> = (props: Props) => {
+//     return <div>Hello</div>
+// } Both works...
 
 const Parent = () => {
-  return (
-    <>
-      <Button className="my-class"></Button>
-    </>
-  );
-};
+    return (
+        <>
+            <Button className="my-class"></Button>
+        </>
+    )
+}
